@@ -1,0 +1,242 @@
+/* src/styles/player.css */
+.player-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  /* Warm amber glass — picks up the golden page background */
+  background: transparent;
+  backdrop-filter: blur(28px) saturate(1.6);
+  -webkit-backdrop-filter: blur(28px) saturate(1.6);
+  border-radius: 60px;
+  padding: 0.75rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Soft warm white border */
+  border: 1px solid rgba(255, 220, 160, 0.22);
+  /* Warm glow beneath the bar */
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(255, 200, 100, 0.12) inset;
+  z-index: 200;
+  transition: all 0.3s ease;
+}
+
+/* ─── Left: Thumb + Track Info ─────────────────── */
+.player-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 200px;
+}
+
+.now-playing-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.track-info h5 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+.track-info p {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ─── Center: Controls + Progress ──────────────── */
+.player-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  max-width: 520px;
+  margin: 0 24px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.18s, transform 0.18s;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.control-btn:hover {
+  color: #ffffff;
+  transform: scale(1.12);
+}
+
+/* White circle play/pause — exactly as in image */
+.play-pause {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a0e00;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s, box-shadow 0.18s;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.play-pause:hover {
+  transform: scale(1.07);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Progress row */
+.progress-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  position: relative;
+  /* Scrubber dot at the end */
+  &::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ─── Right: Heart + More + Volume + Cast ──────── */
+.player-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 160px;
+  justify-content: flex-end;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.volume-slider {
+  width: 78px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.volume-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  /* Scrubber dot */
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ─── Responsive ────────────────────────────────── */
+@media (max-width: 800px) {
+  .player-bar {
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+  }
+  .player-left {
+    min-width: 130px;
+  }
+  .now-playing-thumb {
+    width: 40px;
+    height: 40px;
+  }
+  .track-info h5 {
+    font-size: 0.78rem;
+    max-width: 90px;
+  }
+  .player-right {
+    min-width: auto;
+    gap: 10px;
+  }
+  .volume-slider {
+    width: 50px;
+  }
+}
+
+@media (max-width: 650px) {
+  .track-info p {
+    display: none;
+  }
+  .controls {
+    gap: 14px;
+  }
+  .play-pause {
+    width: 36px;
+    height: 36px;
+  }
+  .player-right .volume-control {
+    display: none;
+  }
+}
