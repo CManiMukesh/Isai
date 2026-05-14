@@ -5,7 +5,7 @@ const songs = [
     title: "Nilaave Vaa",
     artist: "Young raja",
     composer: "Young raja",
-    cover: "public/Ilayaraja's songs are always dreamy_Like a Van Gogh painting_____.jpg",
+    cover: "/youngraja.jpg",
     audio: "/songs/Nilaave Vaa.mp3",
     theme: "#c97718"
   },
@@ -14,7 +14,7 @@ const songs = [
     title: "Munbe Vaa.mp3",
     artist: "ARR",
     composer: "ARR",
-    cover: "public/download.jpg",
+    cover: "/arr.jpg",
     audio: "/songs/Munbe Vaa.mp3",
     theme: "#d9a300"
   },
@@ -23,7 +23,7 @@ const songs = [
     title: "Venpaniye.mp3",
     artist: "Harris Mama",
     composer: "Harris Mama",
-    cover: "public/harris jayaraj aesthetic.jpg",
+    cover: "/harris.jpg",
     audio: "/songs/Venpaniye.mp3",
     theme: "#924f1b"
   },
@@ -32,7 +32,7 @@ const songs = [
     title: "Don'u Don'u Don'u",
     artist: "Ani",
     composer: "Ani",
-    cover: "public/download (1).jpg",
+    cover: "/ani.jpg",
     audio: "/songs/Don'u Don'u Don'u (The Don's Romance).mp3",
     theme: "#8b4b3c"
   },
@@ -41,7 +41,7 @@ const songs = [
     title: "Pavazha Malli",
     artist: "Sai",
     composer: "Sai",
-    cover: "public/Abhyankkar ❤️.jpg",
+    cover: "/Abhyankkar.jpg",
     audio: "/songs/Pavazha Malli.mp3",
     theme: "#6a381d"
   },
@@ -50,7 +50,7 @@ const songs = [
     title: "Pavazha Malli Unplugged",
     artist: "Sai",
     composer: "Sai",
-    cover: "public/Abhyankkar ❤️.jpg",
+    cover: "/Abhyankkar.jpg",
     audio: "/songs/Pavazha Malli Unplugged.mp3",
     theme: "#6a381d"
   }
